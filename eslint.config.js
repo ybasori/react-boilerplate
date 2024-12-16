@@ -11,7 +11,7 @@ export default [
     files: ['**/*.{js,jsx}'],
     languageOptions: {
       ecmaVersion: 2020,
-      globals: globals.browser,
+      globals: {...globals.browser,...globals.jest},
       parserOptions: {
         ecmaVersion: 'latest',
         ecmaFeatures: { jsx: true },
@@ -29,6 +29,7 @@ export default [
       ...react.configs.recommended.rules,
       ...react.configs['jsx-runtime'].rules,
       ...reactHooks.configs.recommended.rules,
+      "react/react-in-jsx-scope": "off",  // Not needed in React 17+
       'react/jsx-no-target-blank': 'off',
       'react-refresh/only-export-components': [
         'warn',
@@ -51,6 +52,7 @@ export default [
       },
       rules: {
         ...reactHooks.configs.recommended.rules,
+        "react/react-in-jsx-scope": "off",  // Not needed in React 17+
         'react-refresh/only-export-components': [
           'warn',
           { allowConstantExport: true },
