@@ -26,4 +26,14 @@ describe("Atoms/ButtonJS", () => {
     fireEvent.click(buttonElement);
     expect(handleClick).toHaveBeenCalledTimes(1);
   });
+  test("Snapshot", () => {
+    const handleClick = jest.fn();
+    const { container } = render(
+      <ButtonJS onClick={handleClick} color="blue">
+        Click
+      </ButtonJS>
+    );
+
+    expect(container).toMatchSnapshot();
+  });
 });
