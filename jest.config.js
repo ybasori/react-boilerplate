@@ -23,4 +23,7 @@ export default {
     ".+\\.(css|styl|less|sass|scss)$": "jest-css-modules-transform",
   },
   setupFilesAfterEnv: ["<rootDir>/src/jest.setup.ts"],
+  moduleNameMapper: {
+    "@/(.*)": "<rootDir>/src/$1",
+  },
 };

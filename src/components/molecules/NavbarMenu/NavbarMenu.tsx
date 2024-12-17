@@ -1,7 +1,7 @@
 import { Fragment } from "react";
-import NavbarLink from "../../atoms/NavbarLink/NavbarLink";
+import NavbarLink from "@/components/atoms/NavbarLink/NavbarLink";
 import { IProps } from "./NavbarMenu.type";
-import NavbarButton from "../../atoms/NavbarButton/NavbarButton";
+import NavbarButton from "@/components/atoms/NavbarButton/NavbarButton";
 
 const NavbarMenu: React.FC<IProps> = ({ menu }) => {
   return (

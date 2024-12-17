@@ -1,7 +1,7 @@
 import { useDispatch } from "react-redux";
-import { AppDispatch } from "../../redux/store";
+import { AppDispatch } from "@/redux/store";
 import { useState } from "react";
-import { authLogin } from "../../redux/reducers/auth/auth.thunk";
+import { authLogin } from "@/redux/reducers/auth/auth.thunk";
 import { useHistory } from "react-router-dom";
 
 const Login = () => {

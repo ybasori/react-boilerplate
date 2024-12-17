@@ -1,8 +1,8 @@
 import { useDispatch } from "react-redux";
-import NavbarMenu from "../../molecules/NavbarMenu/NavbarMenu";
-import { AppDispatch } from "../../../redux/store";
-import { setAuth } from "../../../redux/reducers/auth/auth.slice";
-import { useAuth } from "../../../hooks/auth";
+import NavbarMenu from "@/components/molecules/NavbarMenu/NavbarMenu";
+import { AppDispatch } from "@/redux/store";
+import { setAuth } from "@/redux/reducers/auth/auth.slice";
+import { useAuth } from "@/hooks/auth";
 
 const Navbar = () => {
   const auth = useAuth();

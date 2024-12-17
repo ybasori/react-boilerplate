@@ -1,7 +1,7 @@
-import Home from "./pages/Home/Home";
-import Login from "./pages/Login/Login";
-import Parent from "./pages/Parent/Parent";
-import TestingPage from "./pages/TestingPage/TestingPage";
+import Home from "@/pages/Home/Home";
+import Login from "@/pages/Login/Login";
+import Parent from "@/pages/Parent/Parent";
+import TestingPage from "@/pages/TestingPage/TestingPage";
 
 export const routes = [
   {

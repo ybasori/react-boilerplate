@@ -1,8 +1,8 @@
 import { Provider } from "react-redux";
-import Navbar from "./components/organisms/Navbar/Navbar";
-import Layout from "./components/templates/Layout/Layout";
+import Navbar from "@/components/organisms/Navbar/Navbar";
+import Layout from "@/components/templates/Layout/Layout";
 import { PersistGate } from "redux-persist/integration/react";
-import { persistor, store } from "./redux/store";
+import { persistor, store } from "@/redux/store";
 import { BrowserRouter as Router } from "react-router-dom";
 
 function App() {

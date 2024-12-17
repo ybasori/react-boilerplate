@@ -13,26 +13,28 @@ const logger: Middleware =
     return returnValue;
   };
 
-export type RootState = ReturnType<typeof store.getState>;
-export type AppDispatch = typeof store.dispatch;
-
 const persistConfig = {
   key: "root",
   storage: storage,
   whitelist: ["auth"],
 };
 
+export const rootReducer = persistReducer(
+  persistConfig,
+  combineReducers({
+    auth: authReducer,
+  })
+);
+
 export const store = configureStore({
-  reducer: persistReducer(
-    persistConfig,
-    combineReducers({
-      auth: authReducer,
-    })
-  ),
+  reducer: rootReducer,
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: false,
     }).concat(logger),
 });
+
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;
 
 export const persistor = persistStore(store);

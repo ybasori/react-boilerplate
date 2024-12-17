@@ -1,11 +1,12 @@
 import { Switch, Route } from "react-router-dom";
-import PrivateRoute from "../../../components/templates/PrivateRoute/PrivateRoute";
-import { routes } from "../../../App.constant";
+import PrivateRoute from "@/components/templates/PrivateRoute/PrivateRoute";
+import { routes } from "@/App.constant";
 import { IProps } from "./Layout.type";
 
 const Layout: React.FC<IProps> = ({ children }) => {
   return (
     <>
+      {children}
       <Switch>
         {routes
           .filter((item) => !!item.private)
@@ -22,7 +23,6 @@ const Layout: React.FC<IProps> = ({ children }) => {
             </Route>
           ))}
       </Switch>
-      {children}
     </>
   );
 };
