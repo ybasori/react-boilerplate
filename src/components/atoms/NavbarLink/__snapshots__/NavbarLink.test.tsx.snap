@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Atoms/NavbarLink Snapshot 1`] = `
+<div>
+  <li>
+    <a
+      href="/"
+    >
+      Click
+    </a>
+  </li>
+</div>
+`;

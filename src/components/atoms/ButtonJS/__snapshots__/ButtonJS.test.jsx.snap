@@ -5,6 +5,8 @@ exports[`Atoms/ButtonJS Snapshot 1`] = `
   <button
     class="container color-blue"
   >
+    Test
+     
     Click
   </button>
 </div>

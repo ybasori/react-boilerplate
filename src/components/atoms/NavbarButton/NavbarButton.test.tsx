@@ -1,38 +1,28 @@
 import { render, screen, fireEvent } from "@testing-library/react";
-import ButtonJS from "./ButtonJS";
-import { sampleData } from "./Button.constant";
+import NavbarButton from "./NavbarButton";
 
-describe("Atoms/ButtonJS", () => {
+describe("Atoms/NavbarButton", () => {
   test("renders the button with the correct label", () => {
-    render(
-      <ButtonJS onClick={() => null} color="blue">
-        Click
-      </ButtonJS>
-    );
+    render(<NavbarButton onClick={() => null} name="Click" />);
 
     // Assert that the button is in the document and has the correct text
-    const buttonElement = screen.getByText(`${sampleData} Click`);
+    const buttonElement = screen.getByText("Click");
     expect(buttonElement).toBeInTheDocument();
   });
 
   test("calls the onClick handler when the button is clicked", () => {
     const handleClick = jest.fn();
-    render(
-      <ButtonJS onClick={handleClick} color="blue">
-        Click
-      </ButtonJS>
-    );
+    render(<NavbarButton onClick={handleClick} name="Click" />);
 
-    const buttonElement = screen.getByText(`${sampleData} Click`);
+    const buttonElement = screen.getByText("Click");
     fireEvent.click(buttonElement);
     expect(handleClick).toHaveBeenCalledTimes(1);
   });
+
   test("Snapshot", () => {
     const handleClick = jest.fn();
     const { container } = render(
-      <ButtonJS onClick={handleClick} color="blue">
-        Click
-      </ButtonJS>
+      <NavbarButton onClick={handleClick} name="Click" />
     );
 
     expect(container).toMatchSnapshot();

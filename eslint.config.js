@@ -57,6 +57,7 @@ export default [
           'warn',
           { allowConstantExport: true },
         ],
+        "no-extra-boolean-cast": "off"
       },
     },
   )

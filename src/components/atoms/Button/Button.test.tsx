@@ -1,5 +1,6 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import Button from "./Button";
+import { sampleData } from "./Button.constant";
 
 describe("Atoms/Button", () => {
   test("renders the button with the correct label", () => {
@@ -10,7 +11,7 @@ describe("Atoms/Button", () => {
     );
 
     // Assert that the button is in the document and has the correct text
-    const buttonElement = screen.getByText("Click");
+    const buttonElement = screen.getByText(`${sampleData} Click`);
     expect(buttonElement).toBeInTheDocument();
   });
 
@@ -22,7 +23,7 @@ describe("Atoms/Button", () => {
       </Button>
     );
 
-    const buttonElement = screen.getByText("Click");
+    const buttonElement = screen.getByText(`${sampleData} Click`);
     fireEvent.click(buttonElement);
     expect(handleClick).toHaveBeenCalledTimes(1);
   });

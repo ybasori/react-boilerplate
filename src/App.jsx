@@ -1,21 +1,24 @@
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Coba from "./pages/Coba/Coba";
-import Home from "./pages/Home/Home";
+import { Provider } from "react-redux";
+import Navbar from "./components/organisms/Navbar/Navbar";
+import Layout from "./components/templates/Layout/Layout";
+import { PersistGate } from "redux-persist/integration/react";
+import { persistor, store } from "./redux/store";
+import { BrowserRouter as Router } from "react-router-dom";
 
 function App() {
-
   return (
     <>
-      <Router>
-        <Switch>
-          <Route path="/coba">
-            <Coba />
-          </Route>
-          <Route path="/">
-            <Home />
-          </Route>
-        </Switch>
-      </Router>
+      <Provider store={store}>
+        <PersistGate loading={null} persistor={persistor}>
+          <Router>
+            <Layout>
+              <>
+                <Navbar />
+              </>
+            </Layout>
+          </Router>
+        </PersistGate>
+      </Provider>
     </>
   );
 }

@@ -1,5 +1,6 @@
+import { sampleData } from "./Button.constant";
 import styles from "./ButtonJS.module.scss";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
 const ButtonJS = ({ color, children, onClick }) => {
   return (
@@ -7,13 +8,13 @@ const ButtonJS = ({ color, children, onClick }) => {
       className={`${styles["container"]} ${styles["color-" + color]}`}
       onClick={onClick}
     >
-      {children}
+      {sampleData} {children}
     </button>
   );
 };
 
 ButtonJS.propTypes = {
-  color: PropTypes.oneOf(['blue', 'red']),
+  color: PropTypes.oneOf(["blue", "red"]),
   children: PropTypes.node,
   onClick: PropTypes.func,
 };
