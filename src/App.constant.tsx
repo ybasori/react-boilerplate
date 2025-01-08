@@ -14,7 +14,7 @@ export const routes = [
     path: "/parent",
     Component: Parent,
     private: false,
-    exact: false, // jika punya nested route
+    exact: false, // jika nested route
   },
   {
     path: "/login",
