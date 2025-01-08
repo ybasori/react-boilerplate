@@ -7,9 +7,13 @@ const logger: Middleware =
   ({ getState }) =>
   (next) =>
   (action) => {
-    console.log("will dispatch", action);
+    if (import.meta.env.VITE_REDUX_LOGGER === "ON") {
+      console.log("will dispatch", action);
+    }
     const returnValue = next(action);
-    console.log("state after dispatch", getState());
+    if (import.meta.env.VITE_REDUX_LOGGER === "ON") {
+      console.log("state after dispatch", getState());
+    }
     return returnValue;
   };
 
