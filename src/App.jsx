@@ -16,11 +16,11 @@ function App() {
               <Switch>
                 {routes.map(({ Component, ...item }, key) =>
                   !!item.private ? (
-                    <PrivateRoute key={key} path={item.path}>
+                    <PrivateRoute key={key} path={item.path} exact={item.exact}>
                       <Component />
                     </PrivateRoute>
                   ) : (
-                    <Route key={key} path={item.path}>
+                    <Route key={key} path={item.path} exact={item.exact}>
                       <Component />
                     </Route>
                   )

@@ -8,11 +8,13 @@ export const routes = [
     path: "/profile",
     Component: () => <>Hello</>,
     private: true,
+    exact: true,
   },
   {
     path: "/parent",
     Component: Parent,
     private: false,
+    exact: false, // jika punya nested route
   },
   {
     path: "/login",
@@ -23,10 +25,12 @@ export const routes = [
     path: "/testing-page",
     Component: TestingPage,
     private: false,
+    exact: true,
   },
   {
     path: "/",
     Component: Home,
     private: false,
+    exact: true,
   },
 ];
