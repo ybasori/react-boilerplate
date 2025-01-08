@@ -4,7 +4,7 @@ import { createMemoryHistory } from "history";
 import { Router } from "react-router-dom";
 
 describe("Molecules/NavbarMenu", () => {
-  test("renders the button with the correct label", () => {
+  test("renders the NavbarMenu with the correct option title", () => {
     const history = createMemoryHistory();
     render(
       <Router history={history}>
@@ -28,7 +28,7 @@ describe("Molecules/NavbarMenu", () => {
     expect(buttonElementTwo).toBeInTheDocument();
   });
 
-  test("calls the onClick handler when the button is clicked", () => {
+  test("calls the onClick handler when the menu is clicked", () => {
     const history = createMemoryHistory();
 
     const handleClick = jest.fn();
