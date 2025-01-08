@@ -1,9 +1,10 @@
 import { Provider } from "react-redux";
-import Navbar from "@/components/organisms/Navbar/Navbar";
 import Layout from "@/components/templates/Layout/Layout";
 import { PersistGate } from "redux-persist/integration/react";
 import { persistor, store } from "@/redux/store";
-import { BrowserRouter as Router } from "react-router-dom";
+import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
+import { routes } from "./App.constant";
+import PrivateRoute from "./components/templates/PrivateRoute/PrivateRoute";
 
 function App() {
   return (
@@ -12,9 +13,19 @@ function App() {
         <PersistGate loading={null} persistor={persistor}>
           <Router>
             <Layout>
-              <>
-                <Navbar />
-              </>
+              <Switch>
+                {routes.map(({ Component, ...item }, key) =>
+                  !!item.private ? (
+                    <PrivateRoute key={key} path={item.path}>
+                      <Component />
+                    </PrivateRoute>
+                  ) : (
+                    <Route key={key} path={item.path}>
+                      <Component />
+                    </Route>
+                  )
+                )}
+              </Switch>
             </Layout>
           </Router>
         </PersistGate>
